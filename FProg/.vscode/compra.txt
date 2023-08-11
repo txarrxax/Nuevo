@@ -1,0 +1,5 @@
+4
+Pasta_dientes 1 2.54
+Macarrones 2 1.14
+Leche 6 0.81
+Yogures 4 0.24

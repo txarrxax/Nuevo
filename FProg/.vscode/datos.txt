@@ -1,0 +1,12 @@
+Elena 25 43
+Juan 5 8
+Sonia 2 1
+Julia 3 17
+Pedro 5 67
+Antonio 7 5
+Paco 21 5
+Ana 89 1
+Alex 45 3
+Maria 34 7
+Miguel 4 2
+Hay: 3 nombre que empiezan por la incial A
