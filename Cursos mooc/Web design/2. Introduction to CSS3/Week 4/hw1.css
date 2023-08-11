@@ -1,0 +1,169 @@
+
+body{
+  padding: 1px;
+  margin: 4px;
+  background-color: #b3b3f6;
+}
+
+h1{
+  text-align: center;
+  text-transform: uppercase;
+  color: #F9F9FA;
+  font-family: cursive, serif ,sans-serif ;
+  font-weight: bold;
+  font-size: 50px;
+  
+}
+
+h2 {
+  text-transform: uppercase;
+  color: #cc0000;
+}
+
+header{
+  background-color: #d699ff;
+  background-image: url('../images/flywheel.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+
+section{
+  background-color:  #33cc33;
+  float: right;
+  margin: 25px 5%;
+  width: 70%;
+  display: inline-block;
+  height: 70%;
+}
+
+aside{
+  float: left;
+  margin: 25px 5px;
+  width: 20%;
+  background-color: #030246;
+  padding-top: 10px;
+  display: inline-block;
+}
+
+.left{
+  display: inline-block;
+  width: 20%;
+  padding: 10px;
+  border: 1px;
+}
+
+.right{
+  display: inline-block;
+  margin: 10px;
+  padding: 5px;
+}
+
+nav a{
+  background-color: transparent;
+  font-family: sans-serif;
+  font-size: 20px;
+  text-decoration: none;
+  margin: 15px 10px;
+  display: inline-block;
+  border: 1px solid transparent;
+  padding: 5px 20px;
+  border-radius: 1px;
+}
+img{
+  width:175px;
+  padding: 8px;
+  margin: auto auto;
+  display: block;
+
+}
+
+
+
+nav a:hover{
+  background-color: #F3FF33;
+}
+
+.active{
+  background-color: #FF5733;
+}
+
+section p{
+  padding: 3px;
+}
+
+table{
+  padding: 15px;
+  margin: 25px 0;
+  font-style: 1.2em;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.15);
+  
+}
+
+th{
+  background-color: grey;
+  font-size: 1.2em;
+  border-bottom: 2px solid black;
+}
+
+
+
+tr{
+    text-align: center;
+    font-weight: bold;
+    
+}
+
+ tr:nth-of-type(even){
+    background-color: lightblue;
+   }
+
+ tr:nth-of-type(odd){
+  background-color: lightgreen;
+ }  
+
+tr:last-child{
+  -webkit-border-radius: 15px 15px 0 0;
+  border-radius: 0 0 15px 15px;
+}
+
+tr:last-child>td:last-child{
+  -webkit-border-radius:0 0 15px 0;
+  border-radius: 0 0 15px 0;
+}
+
+tr:last-child>td:first-child{
+  -webkit-border-radius:0 0 0 15px;
+  border-radius: 0 0 0 15px;
+}
+
+ td:first-child{
+  text-align: left;
+}
+
+th:first-child{
+  text-align: left;
+}
+
+td{
+  font-size: 1.2em;
+  text-shadow: 9px;
+  opacity: 0.8px;
+  border-radius: 12px;
+}
+
+table td:hover{
+  background-color: red;
+  opacity: 0.6px;
+  font-size: 1.4em;
+  color: white;
+}
+
+table th:hover{
+  background-color: yellow;
+  opacity: 0.6px;
+  font-size: 1.4em;
+  }

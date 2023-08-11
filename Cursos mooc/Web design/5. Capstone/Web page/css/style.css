@@ -1,0 +1,150 @@
+body{
+	background: #f2f2f3;
+	font-family: 'Poppins', sans-serif;
+}
+.container{
+	width: 100%;
+}
+h1{
+	font-size: 32px;
+	font-weight: 600;
+	color: #356adf;
+}
+p{
+	font-size: 24px;
+	color: #131A39;
+}
+header div{
+	background: #536adf;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: #f2f2f3;
+	height: 104px;
+}
+#title{
+	color: #f2f2f3;
+}
+.logo{
+	width: 46.8px;
+	margin-left: 20px;
+}
+i{
+	width: 48px;
+	height: 32px;
+	margin-right: 20px;
+}
+nav{
+	background: #536adf;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+a{
+	font-size: 24px;
+	color: #f2f2f3;
+	text-decoration: none;
+}
+a:hover{
+	font-size: 28px;
+}
+.item{
+	background: #536adf;
+	border-radius: 30px;
+}
+.item:hover{
+	background: #131A39;
+	color: #f2f2f3;
+}
+.item p{
+	color: #f2f2f3;
+	margin-left: 16px;
+}
+.contact{
+	text-align: center;
+	font-style: italic;
+}
+footer{
+	background: #536adf;
+	text-align: center;
+	font-style: oblique;
+	padding: 4px;
+}
+footer p{
+	color: #f2f2f3;
+	font-size: 16px;
+}
+.pics{
+	width: 200px;
+	height: 200px;
+}
+.slider-wrapper{
+	overflow: hidden;
+	margin-left: 10%;
+	position: relative;
+	width: 400px;
+	height: 400px;
+	margin-bottom: 32px;
+
+}
+.slider-wrapper ul{
+	position: relative;
+	transition: 250ms ease;
+
+	left: 0;
+	width: max-content;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+
+}
+.slider-wrapper li{
+	width: 400px;
+	height: 400px:;
+	list-style: none;
+	display: inline-block;
+	position: relative;
+	margin-left: -4px;
+}
+.controll{
+	color: #536adf;
+	border-radius: 50%;
+	width: 32px;
+	height: 32px;
+	padding:5px;
+	z-index: 1;
+	transition: 250ms ease;
+	cursor: pointer;
+
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+
+}
+.controll i{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	pointer-events: none;
+}
+.controll:hover{
+	color: #131A39;
+}
+.controll-right{
+	right: 16px;
+}
+.controll-left{
+	left:32px;
+}
+.fa-arrow-up{
+	color: #131A39;
+	opacity: .5;
+	position: fixed;
+	top: 90%;
+	left: 90%;
+}
+.fa-arrow-up:hover{
+	opacity: 1;
+}

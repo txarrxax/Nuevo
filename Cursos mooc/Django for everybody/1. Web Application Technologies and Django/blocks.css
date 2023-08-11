@@ -1,0 +1,45 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+div{
+	margin: 5px;
+	padding: 5px;
+	border: solid 5px;
+	width: 25%;
+	float: left;
+}
+
+#one {
+	border-color: blue;
+	position: absolute;
+	margin-left: 70%;
+	margin-top: 20%
+}
+
+#two {
+	border-color: green;
+	position: absolute;
+	margin-left: 70% ;
+}
+
+#three {
+	border-color: orange;
+	position: absolute;
+}
+
+#four {
+	border-color: yellow;
+	position: absolute;
+	margin-top: 20%;
+}
+
+p{
+	text-align: center;
+}
+
+a{
+	text-decoration: none;
+	color: white;
+	background: blue;
+}

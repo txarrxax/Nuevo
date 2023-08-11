@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Validating input</title>
+	<script type="text/javascript" src="ValidatingInputInter.js"></script>
+</head>
+<body>
+	<form>
+		<label>Preferred email address:<input type="email" id="email_addr" name="email1" placeholder="me@me.com" required></label><br>
+		<label>Repeat email address:<input type="email" id="email_repeat" name="email2" required onchange="check()"></label><br>
+		<input type="submit" value="Confirm Emails!" onclick="return check()">
+	</form>
+</body>
+</html>

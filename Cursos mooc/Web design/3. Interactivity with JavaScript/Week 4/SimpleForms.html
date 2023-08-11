@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Simple Forms</title>
+	<script type="text/javascript" src="SimpleFormsInter.js"></script>
+</head>
+<body>
+	<form>
+		<fieldset>
+			<legend>Personal Information:</legend>
+			<label for="name">Name</label>
+			<input type="text" id="name" name="name"><br>
+
+			<label for="email">Email</label>
+			<input type="email" id="email" name="email" placeholder="email@email.com"><br>
+
+			<label for="password">Password</label>
+			<input type="password" id="password" name="password" required="required"><br>
+
+			<label for="radio">Radio Buttons</label><br>
+			<label for="male">Male</label>
+			<input type="radio" id="male" name="gender" value="male"><br>
+			<label for="female">Female</label>
+			<input type="radio" id="female" name="gender" value="female"><br>
+			<label for="other">Other</label>
+			<input type="radio" id="other" name="gender" value="other"><br>
+			
+			<label for="checkbox">Checkboxes</label><br>
+			<label for="cemail">Contact me via email</label>
+			<input type="checkbox" id="cemail" name="contact" value="cemail"><br>
+			<label for="cphone">Contact me via phone</label>
+			<input type="checkbox" id="cphone" name="contact" value="cphone"><br>
+
+			<label for="number">Number</label>
+			<input type="number" id="number" name="number"><br>
+
+			<label for="range">Range</label>
+			<input type="range" id="range" name="range"><br>
+
+			<label for="color">Color</label>
+			<input type="color" id="color" name="color"><br>
+
+			<label for="date">Date</label>
+			<input type="date" id="date" name="date"><br>
+
+			<label for="url">URL</label>
+			<input type="url" id="url" name="url" placeholder="https://www.web.com"><br>
+
+			<input type="submit" value="Click Here">
+		</fieldset>
+	</form>
+</body>
+</html>

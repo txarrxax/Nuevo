@@ -1,0 +1,11 @@
+nav{
+	text-decoration:none;
+	box-sizing:content-box;
+	width:15%;
+	text-align:center;
+	color:blue;
+}
+.active{
+	color:white;
+	box-color:blue;
+}

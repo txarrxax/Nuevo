@@ -1,0 +1,48 @@
+header{
+	background: url(https://upload.wikimedia.org/wikipedia/commons/5/5d/Ultimate_Frisbee%2C_Jul_2009_-_19.jpg), #de56af;
+	height: 100px;
+	padding: 2%;
+}
+body{
+	padding: 10px;
+	margin: 10px;
+}
+h1{
+	color: #fff;
+	text-transform: uppercase;
+	text-align: center;
+}
+nav{
+	text-align: center;
+}
+nav a{
+	box-sizing: content-box;-box;
+	width: 15%;
+	margin: 40px;
+	padding: 20px;
+	background: #fff;
+	color: #000;
+	text-decoration: none;
+	border-radius:10px;
+	opacity: 0.5; 
+}
+.active{
+	opacity: 1;
+}
+main{
+	display: flex;
+}
+.left{
+	width: 25%;
+	height: 100vw;
+	background: #175800;
+}
+img{
+	width: 80%;
+	border: solid #000;
+	margin: 10%;
+}
+.right{
+	width:70%;
+	margin-left: 2%;
+}

@@ -1,0 +1,1 @@
+print('Exercise 6.5')
