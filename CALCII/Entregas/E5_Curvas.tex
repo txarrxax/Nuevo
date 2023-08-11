@@ -1,0 +1,110 @@
+\documentclass[11pt,a4paper]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{color}
+\usepackage{graphicx}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\textheight}{25cm}
+\setlength{\textwidth}{17cm}
+\setlength{\topmargin}{-3cm}
+\setlength{\oddsidemargin}{-5mm}
+\setlength{\evensidemargin}{0.5cm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\red}{\textcolor{red}}
+\newcommand{\blue}{\textcolor{blue}}
+\newcommand{\white}{\textcolor{white}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+\parindent=0mm %indentado de comienzo de p\'arrafo
+\parskip=0mm %separaci\'on entre p\'arrafos
+
+\thispagestyle{empty} %paginaci\'on
+\date{ }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcounter{ex}
+\newcommand{\ejer}{\stepcounter{ex}\textbf{\theex.-}\ }
+\newcommand{\sen}{\sin}
+
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+\hrule \vskip 1mm
+
+\noindent {\large \sc C\'alculo 2}:   \quad $1^0$ del grado de  Matem\'aticas y doble grado MAT-IngINF \hfill  2022/23
+
+
+\vskip 1mm
+
+{\bf Ejercicio 5} (entrega el 16.05.23) \hskip 5mm {\bf APELLIDOS, Nombre}: TARRASA MARTÍN, Alberto
+\vskip 1mm \hrule
+
+\vskip 1mm
+
+\hfill {\footnotesize \it  (Para la respuesta usa solo la cara de una p\'agina)}
+
+\vskip 3mm
+
+\ejer  El potencial debido a una carga $Q$ en $(0,0,0)$ viene dado por
+$\displaystyle \Phi(x,y,z)=\frac{1}{4\pi} \frac{Q}{\sqrt{x^2+y^2+z^2}}$
+y el campo el\'ectrico correspondiente es ${\bold E}=-\nabla \Phi$. 
+\begin{enumerate}
+\item Sea $\mathcal{S}_R$ la esfera de radio $R$ centrada  en el origen. Encuentra el flujo el\'ectrico del campo  ${\bold E}$ hacia el exterior de la esfera $\mathcal{S}_R$ y comprueba que solo depende de la constante $Q$ pero no del radio $R$.
+\item Calcula la divergencia de ${\bold E}$ y explica por qu\'e no se puede usar el Teorema de Gauss en este caso.
+\end{enumerate}
+
+\vskip 5mm
+
+{\bf SOL.:}\\
+1. Para empezar, calculamos la expresión del campo eléctrico:
+\[
+\bold E(x,y,z)=-\nabla\Phi=\left(\dfrac{\partial\Phi}{\partial x},\dfrac{\partial\Phi}{\partial y},\dfrac{\partial\Phi}{\partial z}\right)=
+\dfrac{Q}{4\pi}\left(\dfrac{x}{\sqrt{(x^2+y^2+z^2)^3}}, \dfrac{y}{\sqrt{(x^2+y^2+z^2)^3}}, \dfrac{z}{\sqrt{(x^2+y^2+z^2)^3}} \right)
+\]
+
+A continuación, parametrizamos la esfera $x^2+y^2+z^2=R^2$ con coordenadas esféricas:
+\[
+\mathcal S_R=\gamma(\theta,\varphi)=(R\sen\theta\cos\varphi,R\sen\theta\sen\varphi,R\cos\theta), \text{ con } (\theta,\varphi)\in[0,\pi]\times[0,2\pi]=D \text{ y } R>0
+\]
+Por último, calculamos $T_\theta$ y $T_\varphi$:
+\[
+T_\theta=\dfrac{\partial\gamma}{\partial\theta}=(R\cos\theta\cos\varphi,R\cos\theta\sen\varphi,-R\sen\theta), \quad T_\varphi=\dfrac{\partial\gamma}{\partial\varphi}=(-R\sen\theta\sen\varphi,R\sen\theta\cos\varphi,0)
+\]
+De forma que $T_\theta \times T_\varphi = (-R^2\sen^2\theta\cos\varphi, R^2\sen^2\theta\sen\varphi, R^2\sen\theta\cos\theta)$.\\
+Así, el flujo eléctrico del campo eléctrico {\bf E} hacia el exterior de la esfera $\mathcal S_R$ es:
+\[\displaystyle
+\iint_\mathcal{S} {\bf E}\cdot dA=\iint_D {\bf E}(\gamma(\theta,\varphi))\cdot (T_\theta\times T_\varphi)\ d\theta d\varphi=
+\]
+\[=\iint_D \dfrac{Q}{4\pi R^2}(\sen\theta\cos\varphi,\sen\theta\sen\varphi,\cos\theta)\cdot R^2(-\sen^2\theta\cos\varphi,\sen^2\theta\sen\varphi,\sen\theta\cos\theta)\ d\theta d\varphi=
+\]
+\[
+=\dfrac{Q}{4\pi}\int^{2\pi}_0\left( \int^{\pi}_0\sen\theta\ d\theta\right)\ d\varphi=\dfrac{Q}{4\pi}[-\cos\theta]^{\pi}_0[\varphi]^{2\pi}_0=\dfrac{Q}{4\pi}\cdot 2\cdot 2\pi=Q
+\]
+2.Calculamos la divergencia de {\bf E} como $\nabla\cdot{\bf E}$:
+
+\[
+\nabla\cdot{\bf E}=\dfrac{Q}{4\pi}\left(\dfrac{-2x^2+y^2+z^2}{\sqrt{(x^2+y^2+z^2)^5}}+\dfrac{x^2-2y^2+z^2}{\sqrt{(x^2+y^2+z^2)^5}}+\dfrac{x^2+y^2-2z^2}{\sqrt{(x^2+y^2+z^2)^5}} \right)=0
+\]
+
+
+No se puede aplicar el Teorema de Gauss ya que se requiere que el campo vectorial sea diferenciable. En este caso, el campo no es continuo en el punto $(0,0,0)$, ya que se anulan los denominadores, por lo que no puede ser diferenciable.
+\end{document}
+
+
+  

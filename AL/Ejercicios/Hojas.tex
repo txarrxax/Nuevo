@@ -1,0 +1,172 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+
+\setlength{\textheight}{25cm}
+\setlength{\textwidth}{17cm}
+\setlength{\topmargin}{-3cm}
+\setlength{\oddsidemargin}{-5mm}
+\setlength{\evensidemargin}{0.5cm}
+
+\newcommand{\R}{\mathbb R}
+
+
+\parindent=0mm %indentado de comienzo de p\'arrafo
+\parskip=0mm %separaci\'on entre p\'arrafos
+
+\thispagestyle{empty} %paginaci\'on
+\date{ }
+
+
+\begin{document}
+\hrule \vskip 1mm
+
+\noindent {\large \sc Álgebra Lineal}:   $1^0$ del grado de  Matem\'aticas y doble grado MAT-IngINF \hfill  Curso 2022/23
+
+
+\vskip 1mm
+
+{\centering Hojas de ejercicios\par}
+\vskip 1mm \hrule \vskip 5mm
+{\bf 1.-} Decide de manera razonada si los siguientes conjuntos son subespacios vectoriales de $\R^3$ o no. Da una base cuando lo sean:
+\begin{itemize}
+\item[(a)] $V_1=\{(x,y,z)\in\R^3:x+y+z=0\}$
+\item[(b)] $V_2=\{(x,y,z)\in\R^3:x=y, 2y=z+7\}$
+\item[(c)] $V_3=\{(x,y,z)\in\R^3:x=y,2y=z\}$
+\end{itemize}
+\vskip 1mm
+{\bf SOL:}
+\begin{itemize}\item[(a)]$V_1=\{(x,y,z)\in\R^3:x+y+z=0\}$\end{itemize}
+
+- Elemento neutro: Sea $\vec 0=(0,0,0)$, se tiene que $0+0+0=0\Rightarrow \vec 0\in V_1$.\\
+- Suma: Sean $v_1,v_2\in V_1$, entonces $v_1+v_2=(x_1,y_1,z_1)+(x_2,y_2,z_2)=(x_1+x_2,y_1+y_2,z_1+z_2)$, de forma que $x_1+x_2+y_1+y_2+z_1+z_2=(x_1+y_1+z_1)+(x_2+y_2+z_2)=0+0=0\Rightarrow v_1+v_2\in V_1$.\\
+- Producto: Sea $\lambda\in\R$ y $v\in V_1$, entonces $\lambda v=\lambda(x,y,z)=(\lambda x,\lambda y,\lambda z)$, de forma que $\lambda x+\lambda y+\lambda z=\lambda(x+y+z)=\lambda 0=0\Rightarrow \lambda v\in V_1$.
+\vskip 0.5mm
+Luego, $V_1$ es un subespacio vectorial de $\R^3$.
+\vskip 1mm
+Sea $v=(x,y,z)\in V_1$, entonces $x+y+z=0\Rightarrow z=-x-y$. Sean los pares $(0,1), (1,0), (1,1)$ pares $(x,y)$, tenemos la base $\mathcal B_{V_1}=\left\{\begin{pmatrix}0\\1\\-1\end{pmatrix},\begin{pmatrix}1\\0\\-1\end{pmatrix},\begin{pmatrix}1\\1\\0\end{pmatrix}\right\}$.\\
+
+\begin{itemize}\item[(b)]$V_2=\{(x,y,z)\in\R^3:x=y, 2y=z+7\}$\end{itemize}
+
+- Elemento neutro: Sea $\vec 0 =(0,0,0)$, se tiene que $0\ne 0+7=7\Rightarrow \vec 0\not\in V_2$.
+\vskip 0.5mm
+Luego, $V_2$ no es un subespacio vectorial de $\R^3$.
+
+\begin{itemize}\item[(c)]$V_3=\{(x,y,z)\in\R^3:x=y, 2y=z\}$\end{itemize}
+
+- Elemento neutro: Sea $\vec 0=(0,0,0)$, se tiene que $0=0$ y $2\cdot 0=0\Rightarrow \vec 0\in V_3$.\\
+- Suma: Sean $v_1,v_2\in V_3$, entonces $v_1+v_2=(x_1,y_1,z_1)+(x_2,y_2,z_2)=(x_1+x_2,y_1+y_2,z_1+z_2)$, de forma que $x_1+x_2=y_1+y_2$, ya que $x_i=y_i$, y $2(y_1+y_2)=2y_1+2y_2=z_1+z_2$, ya que $2y_i=z_i$, $\Rightarrow v_1+v_2\in V_3$.\\
+- Producto: Sea $\lambda\in\R$ y $v\in V_3$, entonces $\lambda v=\lambda(x,y,z)=(\lambda x,\lambda y,\lambda z)$, de forma que $\lambda x=\lambda y$, ya que $x=y$ y $2\lambda y=\lambda z$, ya que $2y=z$, $\Rightarrow \lambda v\in V_3$.
+\vskip 0.5mm
+Luego, $V_3$ es un subespacio vectorial de $\R^3$.
+\vskip 1mm
+Sea $v=(x,y,z)\in V_3$, entonces $x=y, 2y=z$. Sea $y=1$, tenemos la base $\mathcal B_{V_3}=\left\{\begin{pmatrix}1\\1\\2\end{pmatrix}\right\}$.
+\vskip 5 mm
+{\bf 2.-} Sea $W$ el subespacio de $\R^4$ generado por $(1,2,-5,3)$ y $(2,-1,4,7)$. Se pide:
+\begin{itemize}
+\item[(a)] Determinar si el vector $(0,0,-37,-3)$ pertenece a $W$.
+\item[(b)] Determinar para qué valores de $\alpha$ y $\beta$ el vector $(\alpha,\beta,-37,-3)$ pertenece a $W$.
+\end{itemize}
+\vskip 1mm
+
+{\bf SOL:}
+\begin{itemize}\item[(a)]Determinar si el vector $(0,0,-37,-3)$ pertenece a $W$.\end{itemize}
+$(0,0,-37,-3)\in W\Rightarrow \exists \lambda,\mu:(0,0,-37,-3)=\lambda(1,2,-5,3)+\mu(2,-1,4,7)$ A partir de esto, obtenemos el sistema: $\begin{cases}\lambda+2\mu=0\\2\lambda-\mu=0\\-5\lambda+4\mu=-37\\3\lambda+7\mu=-3 \end{cases}$ imcompatible, por lo que $(0,0,-37,-3)\not\in W$.\\
+\begin{itemize}\item[(b)]Determinar para qué valores de $\alpha$ y $\beta$ el vector $(\alpha,\beta,-37,-3)$ pertenece a $W$.
+\end{itemize}
+Usando el sistema del apartado anterior, tenemos $\begin{cases}\lambda+2\mu=\alpha\\2\lambda-\mu=\beta\\-5\lambda+4\mu=-37\\3\lambda+7\mu=-3 \end{cases}$, con solución $(\lambda,\mu,\alpha,\beta)=\left(\dfrac{247}{47},-\dfrac{126}{47},-\dfrac{5}{47},\dfrac{620}{47}\right)$. Luego, $(\alpha,\beta,-37,-3)\in W\Leftrightarrow \alpha =-\dfrac{5}{47},\beta=\dfrac{620}{47}$.
+\vskip 5mm
+{\bf 3.-} Consideramos en $\R^4$ los subespacios vectoriales $W_1=\langle v_1,v_2,v_3\rangle$ y $W_2=\langle v_4,v_5\rangle$ con $v_1=(1,-2,-1,3),v_2=(0,2,1,-1),v_3=(-2,6,3,-7),v_4=(1,2,1,1),v_5=(2,0,-1,1)$. Halla una base y calcula la dimensión de $W_1$, $W_2$, $W_1+W_2$ y $W_1\cap W_2$. Comprueba que se verifica la fórmula de Grassmann.
+\vskip 1mm
+Comprobamos la independencia lineal de los vectores:
+\[
+\begin{pmatrix}
+1&0&-2&1&2\\
+-2&2&6&2&0\\
+-1&1&3&1&-1\\
+3&-1&-7&1&1
+\end{pmatrix}\Rightarrow\begin{pmatrix}
+1&0&-2&1&2\\
+0&1&1&2&1\\
+0&0&0&0&2\\
+0&0&0&0&0
+\end{pmatrix}
+\]
+De forma que $\mathcal B_{W_1}=\{v_1,v_2\}$ y $\dim W_1=2$; $\mathcal B_{W_2}=\{v_4,v_5\}$ y $\dim W_2=2$; $\mathcal B_{W_1+W_2}=\{v_1,v_2,v_5\}$ y $\dim (W_1+W_2)= 3$; $\mathcal B_{W_1\cap W_2}=\{v_1\}$ y $\dim (W_1\cap W_2)=1$.\\
+La fórmula de Grassmann dice que $\dim W_1 + \dim W_2 = \dim (W_1+W_2) + \dim (W_1\cap W_2)$. En este caso, verificamos que $2+2=4=3+1$.
+\vskip 5mm
+
+{\bf 4.-} Sean $f:\mathbb M_2(\R)\to \mathbb M_2(\R)$ y $g:\mathbb M_2(\R)\to \R^3$ las aplicaciones lineales definidas por:
+\[
+f:\begin{pmatrix}
+a&b\\c&d
+\end{pmatrix}=\begin{pmatrix}
+a+b&0\\c-d&5a
+\end{pmatrix}
+\text{ y }
+g=\begin{pmatrix}
+a&b\\c&d
+\end{pmatrix}=(a+b,-c,d-a).
+\]
+\begin{itemize}
+\item[(a)] Halla las matrices de $f$ y $g$ respecto a las bases estándar.
+\item[(b)] Comprueba que $\mathcal B=\left\{\begin{pmatrix}1&1\\1&5\end{pmatrix}, \begin{pmatrix}1&2\\3&0\end{pmatrix}, \begin{pmatrix}1&-1\\0&0\end{pmatrix}, \begin{pmatrix}1&0\\0&0\end{pmatrix}\right\}$ es una base de $\mathbb M_2(\R)$. Halla la matriz de $f$ y las coordenadas de $f\begin{pmatrix}1&1\\1&5\end{pmatrix}$ respecto a la base $\mathcal B$.
+\item[(c)] Halla la matriz de $g$ respecto a la base $\mathcal B$ en $\mathbb M_2(\R)$ y la base estándar $\mathcal C$ de $\R^3$.
+\item[(d)] Halla la matriz de $g\circ f$ respecto a las bases estándar y respecto a la base $\mathcal B$ en $\mathbb M_2(\R)$ y la base estándar de $\R^3$.
+\item[(e)] Relaciona las diferentes matrices obtenidas.
+\end{itemize}
+\vskip 1mm
+{\bf SOL:}
+\begin{itemize}\item[(a)] Halla las matrices de $f$ y $g$ respecto a las bases estándar.\end{itemize}
+\[
+f\begin{pmatrix}1&0\\0&0\end{pmatrix}=\begin{pmatrix}1&0\\0&5\end{pmatrix}; f\begin{pmatrix}0&1\\0&0\end{pmatrix}=\begin{pmatrix}1&0\\0&0\end{pmatrix}; f\begin{pmatrix}0&0\\1&0\end{pmatrix}=\begin{pmatrix}0&0\\1&0\end{pmatrix}; f\begin{pmatrix}0&0\\0&1\end{pmatrix}=\begin{pmatrix}0&0\\-1&0\end{pmatrix}
+\]
+\[
+g\begin{pmatrix}1&0\\0&0\end{pmatrix}=(1,0,-1); g\begin{pmatrix}0&1\\0&0\end{pmatrix}=(1,0,0); g\begin{pmatrix}0&0\\1&0\end{pmatrix}=(0,-1,0); g\begin{pmatrix}0&0\\0&1\end{pmatrix}=(0,0,1)
+\]
+\[
+M_{\mathcal{CC'}}(f)=\begin{pmatrix}
+1&1&0&0\\0&0&0&0\\0&0&1&-1\\5&0&0&0
+\end{pmatrix} \quad \quad
+M_{\mathcal{CC'}}(g)=\begin{pmatrix}
+1&1&0&0\\0&0&-1&0\\-1&0&0&1
+\end{pmatrix}
+\]
+\begin{itemize}\item[(b)] Comprueba que $\mathcal B=\left\{\begin{pmatrix}1&1\\1&5\end{pmatrix}, \begin{pmatrix}1&2\\3&0\end{pmatrix}, \begin{pmatrix}1&-1\\0&0\end{pmatrix}, \begin{pmatrix}1&0\\0&0\end{pmatrix}\right\}$ es una base de $\mathbb M_2(\R)$. Halla la matriz de $f$ y las coordenadas de $f\begin{pmatrix}1&1\\1&5\end{pmatrix}$ respecto a la base $\mathcal B$.\end{itemize}
+Son vectores linealmente independientes y $\dim \mathcal B=4=\dim \mathbb M_2(\R)\Rightarrow \mathcal B$ es base de $\mathbb M_2(\R)$.\\
+\[
+f\begin{pmatrix}1&1\\1&5\end{pmatrix}=\begin{pmatrix}2&0\\-4&5\end{pmatrix}=\begin{pmatrix}1&1\\1&5\end{pmatrix}-\dfrac{3}{5}\begin{pmatrix}1&2\\3&0\end{pmatrix}+\dfrac{4}{5}\begin{pmatrix}1&-1\\0&0\end{pmatrix}+\dfrac{4}{5}\begin{pmatrix}1&0\\0&0\end{pmatrix}
+\]
+Luego, $\text{coord}_{\mathcal B}f\begin{pmatrix}1&1\\1&5\end{pmatrix}=\left(1,-\dfrac{3}{5},\dfrac{4}{5},\dfrac{4}{5}\right)$.\\
+
+\begin{itemize}\item[(c)] Halla la matriz de $g$ respecto a la base $\mathcal B$ en $\mathbb M_2(\R)$ y la base estándar $\mathcal C$ de $\R^3$.\end{itemize}
+\[ g\begin{pmatrix}1&1\\1&5\end{pmatrix}=(2,-1,4); g\begin{pmatrix}1&2\\3&0\end{pmatrix}=(3,-3,-1); g\begin{pmatrix}1&-1\\0&0\end{pmatrix}=(0,0,-1); g\begin{pmatrix}1&0\\0&0\end{pmatrix}=(1,0,-1)
+\]
+\[
+M_{\mathcal{BC}}(g)=\begin{pmatrix}
+2&3&0&1\\-1&-3&0&0\\4&-1&-1&-1
+\end{pmatrix}
+\]
+\begin{itemize}\item[(d)] Halla la matriz de $g\circ f$ respecto a las bases estándar y respecto a la base $\mathcal B$ en $\mathbb M_2(\R)$ y la base estándar de $\R^3$.\end{itemize}
+\[
+M_{\mathcal{CC'}}(f\circ g)=M_{\mathcal{CC'}}(g)\cdot M_{\mathcal{CC'}}(f)=\begin{pmatrix}
+1&1&0&0\\0&0&-1&0\\-1&0&0&1
+\end{pmatrix}\cdot \begin{pmatrix}
+1&1&0&0\\0&0&0&0\\0&0&1&-1\\5&0&0&0
+\end{pmatrix}=\begin{pmatrix}
+1&1&0&0\\0&0&-1&1\\4&-1&0&0
+\end{pmatrix}
+\]
+\[
+M_{\mathcal{BC}}(f\circ g)=M_{\mathcal{BC}}(g)\cdot M_{\mathcal{CC'}}(f)=\begin{pmatrix}
+2&3&0&1\\-1&-3&0&0\\4&-1&-1&-1
+\end{pmatrix}\cdot \begin{pmatrix}
+1&1&0&0\\0&0&0&0\\0&0&1&-1\\5&0&0&0
+\end{pmatrix}=\begin{pmatrix}
+7&2&0&0\\-1&-1&0&0\\3&4&-1&1
+\end{pmatrix}
+\]
+\end{document}

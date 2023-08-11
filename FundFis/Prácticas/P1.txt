@@ -1,0 +1,8 @@
+a) S1 = +12.0V, S2 = +5V
+b) S1 = +12.04V, S2 = +4.99V
+c) I = 2.32 mA
+d) 3V -> I = 1.37 mA, 9V -> I = 4.15 mA 
+e) R = 2.172 kohm
+f) V eficaz = +1.058V
+g)
+h) Vpp = 3.20 V

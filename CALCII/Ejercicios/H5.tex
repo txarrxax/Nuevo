@@ -1,0 +1,49 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumerate}
+
+\setlength{\textheight}{25cm}
+\setlength{\textwidth}{17cm}
+\setlength{\topmargin}{-2cm}
+\setlength{\oddsidemargin}{-5mm}
+\setlength{\evensidemargin}{0.5cm}
+
+\parindent=0mm
+\parskip=0mm
+\thispagestyle{empty}
+
+\newtheorem{thm}{Theorem}
+
+\begin{document}
+\textbf{12.-} Calcular los máximos y mínimos absolutos de $f(x,y)=x^3+3xy^2$ en $\Omega=\{(x,y)\in \mathbb R^2:x^2+y^2\leq 1, x\leq y\}$.
+\textbf{SOL:}\\
+\begin{enumerate}[1.]
+\item Calculamos los puntos críticos de $f$ en el interior de $\Omega$.
+$$\nabla f(x,y)=(3x^2+3y^2, 6xy)=0 \Rightarrow \begin{cases} 3x^2+3y^2=0\\6xy=0\end{cases}\Rightarrow (x,y)=(0,0)\in \Omega$$
+\item Calculamos los puntos críticos de $f$ en la frontera de $\Omega$.\\
+\begin{enumerate}[2.1.]
+\item Calculamos los puntos críticos de $f$ cuando $x^2+y^2=1, x\leq y$.\\
+Definimos $g(x,y)=x^2+y^2-1$ y buscamos los puntos $(x,y)$ tales que $\nabla f(x,y)=\lambda \nabla g(x,y)$ para algún $\lambda \in \mathbb R$.
+$$\begin{cases}
+3x^2+3y^2=\lambda 2x\\ 6xy=\lambda 2y\\ x^2+y^2=1
+\end{cases}$$
+Obtenemos los puntos:
+$$(x,y)=\left(\pm\dfrac{\sqrt{2}}{2},\pm\dfrac{\sqrt{2}}{2}\right)\in \Omega,
+(x,y)=\left(\dfrac{\sqrt{2}}{2},-\dfrac{\sqrt{2}}{2}\right)\not\in \Omega,
+(x,y)=\left(-\dfrac{\sqrt{2}}{2},\dfrac{\sqrt{2}}{2}\right)\in \Omega$$
+$$(x,y)=(1,0)\not\in\Omega, (x,y)=(-1,0)\in\Omega$$
+\item Calculamos los puntos críticos de $f$ cuando $x=y, x^2+y^2\leq 1$.
+Definimos $h(x,y)=x-y$ y buscamos los puntos $(x,y)$ tales que $\nabla f(x,y)=\lambda \nabla h(x,y)$ para algún $\lambda \in \mathbb R$.
+$$\begin{cases}
+3x^2+3y^2=\lambda\\ 6xy=-\lambda\\ x=y
+\end{cases}$$
+Obtenemos el punto:
+$$(x,y)=(0,0)$$
+\end{enumerate}
+\item Evaluamos $f$ en cada uno de los puntos obtenidos y determinamos los valores máximos y mínimos.
+\end{enumerate}
+\end{document}

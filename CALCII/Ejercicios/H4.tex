@@ -1,0 +1,74 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{multicol}
+
+\setlength{\textheight}{25cm}
+\setlength{\textwidth}{17cm}
+\setlength{\topmargin}{-3cm}
+\setlength{\oddsidemargin}{-5mm}
+\setlength{\evensidemargin}{0.5cm}
+
+\parindent=0mm
+\parskip=0mm
+\thispagestyle{empty}
+\date{22.03.2023}
+
+\newcounter{ex}
+\newcommand{\ejer}{\stepcounter{ex}\textbf{\theex.-}\ }
+\newcommand{\sen}{\operatorname{sen}}
+
+
+\begin{document}
+\hrule \vskip 1mm
+
+\noindent {\large \sc C\'alculo II.}\\{\large \sc $1^o$ de Grado en Matem\'aticas y Doble Grado Inform\'atica-Matem\'aticas.} \hfill  Curso 2022/23\\{\large \sc Departamento de Matemáticas}
+
+
+\vskip 1mm
+
+\centering {\bf  Hoja 4 } \vskip 1mm \hrule
+
+\vskip 1mm
+\raggedright
+
+\ejer Sea $F(x,y)=f(u(x,y),v(x,y))$ con $u=\dfrac{x-y}{2},v=\dfrac{x+y}{2}$. Aplicar la regla de la cadena para calcular $\nabla F(x,y)$ en función de las derivadas parciales de $f$, $\dfrac{\partial f}{\partial u}$ y $\dfrac{\partial f}{\partial v}$.\\
+\vskip 1mm
+{\bf SOL:} $\nabla F(x,y)=\left(\dfrac{\partial F}{\partial x},\dfrac{\partial F}{\partial y}\right)=\left(\dfrac{\partial f}{\partial u}\dfrac{\partial u}{\partial x}+\dfrac{\partial f}{\partial v}\dfrac{\partial v}{\partial x}, \dfrac{\partial f}{\partial u}\dfrac{\partial u}{\partial y}+\dfrac{\partial f}{\partial v}\dfrac{\partial v}{\partial y} \right)=\left(\dfrac{1}{2}\dfrac{\partial f}{\partial u}+\dfrac{1}{2}\dfrac{\partial f}{\partial v}, -\dfrac{1}{2}\dfrac{\partial f}{\partial u}+\dfrac{1}{2}\dfrac{\partial f}{\partial v}\right)$\\
+
+\ejer Sean $f(x,y)=x^2+y$, $g(u)=(\sen3u,\cos8u)$ y $h(u)=f(g(u))$. Culcular $\dfrac{dh}{du}$ en $u=0$ tanto de forma directa como usando la regla de la cadena.\\
+\vskip 1mm
+{\bf SOL:}\\
+- De forma directa:
+\[h(u)=f(g(u))=f(\sen3u,\cos8u)=(\sen3u)^2+\cos8u\Rightarrow \dfrac{dh}{du}=6\sen3u\cos3u+-8\sen8u\Rightarrow \dfrac{dh}{du}(0)=0\]
+- Usando la regla de la cadena:
+\[\dfrac{dh}{du}(0)=\dfrac{\partial f}{\partial x}(g(0))\dfrac{d g_1}{d u}(0)+\dfrac{\partial f}{\partial y}(g(0))\dfrac{d g_2}{d u}(0)=\dfrac{\partial f}{\partial x}(0,1)\dfrac{d g_1}{d u}(0)+\dfrac{\partial f}{\partial y}(0,1)\dfrac{d g_2}{d u}(0)=0\]
+
+\ejer Las relaciones $u=f(x,y)$, $x=x(t)$ e $y=y(t)$ definen $u$ como función escalar de $t$, digamos $u=u(t)$. Aplicar la regla de la cadena para la derivada de $u$ respecto de $t$ cuando
+\[f(x,y)=e^{xy}\cos xy^2, \hskip 5mm x(t)=\cos t, \hskip 5mm y(t)=\sen t. \]
+\vskip 1mm
+{\bf SOL:}
+\[\dfrac{\partial u}{\partial t}=\dfrac{\partial f}{\partial x}(x(t),y(t))\dfrac{dx}{dt}(t)+\dfrac{\partial f}{\partial y}(x(t),y(t))\dfrac{dy}{dt}(t)=
+\]
+\[=\left(e^{x(t)y(t)}y(t)\cos(x(t)(y(t))^2)-e^{x(t)y(t)}\sen(x(t)(y(t))^2)(y(t))^2\right)(-\sen t)+
+\]
+\[+\left(e^{x(t)y(t)}y(t)\cos(x(t)(y(t))^2)-e^{x(t)y(t)}\sen(x(t)(y(t))^2)2x(t)y(t)\right)(\cos t)=   \]
+\[=e^{\cos t\sen t}\left( \cos(\cos t\sen^2t)(\cos^2t-\sen^2t)+\sen(\cos t\sen^2t)\sen^3t-2\cos^2t\sen t\right)
+\]
+
+\ejer La sustitución $t=g(x,y)$ convierte $F(t)$ en $f(x,y)=F(g(x,y))$. Calcular la matriz $Df(x,y)$ en el caso particular en que $F(t)=e^{\sen t}$ y $g(x,y)=\cos(x^2+y^2)$.\\
+\vskip 1mm
+{\bf SOL:}\\
+Por una parte, $DF(t)=F'(t)$, de forma que $DF(g(x,y)))=e^{\sen(\cos(x^2+y^2))}\cos(\cos(x^2+y^2)$. Por otra, $Dg(x,y)=\left(\dfrac{\partial g}{\partial x}(x,y), \dfrac{\partial f}{\partial y} \right)=(2x\sen(x^2+y^2), 2y\sen(x^2+y^2)$. Luego
+\[
+Df(x,y)=DF(g(x,y))Dg(x,y)=e^{\sen(\cos(x^2+y^2))}\cos(\cos(x^2+y^2)(2x\sen(x^2+y^2), 2y\sen(x^2+y^2)=
+\]
+\[
+=\left(2xe^{\sen(\cos(x^2+y^2))}\cos(\cos(x^2+y^2)\sen(x^2+y^2), 2ye^{\sen(\cos(x^2+y^2))}\cos(\cos(x^2+y^2)\sen(x^2+y^2)\right)
+\]
+\end{document}
