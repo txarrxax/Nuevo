@@ -1,0 +1,21 @@
+#s:122;Outside World;^^ ^^ vvh;^ XXX v v;. XXX ^^ ;vv XX . ^;, ..  ^^.;Desert;1;There is a big rock.
+#s:211;X-ray Room;    *    ;   /|\   ;  / | \  ; /  *  \ ;*-------*;X-ray Room;0;There's nobody here, but the protective material is still there.
+#s:224;Clonation Lab;  ___    ; |mo^| " ;  ¯¯¯___ ; "@ |mo^|;     ¯¯¯ ;Clonation Lab;0;There are dead ant bodies inside weird tubes.
+#s:322;Corridor;   ____  ;  | @  | ; *| @@ | ;  |____| ; _______ ;Corridor;0;You see a failed experiments through the window.
+#s:313;Genetics Unit;         ;         ;         ;         ;         ;Genetics Unit;0;Scientists study DNA samples here.
+#s:314;Sample Area;         ;         ;         ;         ;         ;Sample Area;0;this room is so untidy.
+#s:333;Storage Room;         ;         ;         ;         ;         ;Storage Room;0;There are so many things here.
+#s:414;Upgrading Room;   ____  ; /_____\ ;   | |   ;   | |   ;   \./    ;Upgrade your arms;1;Your attack will be more efective thanks to this space
+#o:11;Lantern;122;It can illuminate spaces. Use it to inspect dark places.;0;1;-1;-1;1;0;0
+#o:21;LeadVest;211;Ray technicians use it to protect themselves from radiation (+7 DEF).;1;1;-1;-1;0;0;-7
+#o:26;Papers;313;Highly important data.;1;1;-1;-1;0;0;0
+#o:31;Antibiotics;313;They can give you extra health points.;1;1;-1;-1;0;0;0
+#o:33;Wire;314;They are useful when dealing with electrical issues.;1;1;-1;-1;0;0;0
+#o:34;Toxics;313;Dangerous substances, you may not touch them.;1;1;-1;-1;0;0;0
+#o:35;Charger;313;Small measures of liquid can be taken with it.;0;1;-1;-1;0;0;0
+#p:1;Ant;211;5;5
+#e:2;Spider;414;5;9
+#l:51;Elevator_21;212;122;4;1
+#l:77;313_322;313;322;3;1
+#l:91;314_333;314;333;3;0
+#l:92;333_314;333;314;2;0

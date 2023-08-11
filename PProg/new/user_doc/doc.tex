@@ -1,0 +1,486 @@
+\documentclass[10.9pt,a4paper]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{anysize}
+\usepackage{pgfplots}
+\usepackage{circuitikz}
+\usepackage{float}
+\usepackage{array}
+%\usepackage{wrapfig}
+%\usepackage{epsfig}
+%\usepackage{epstopdf}
+%\usepackage{lipsum}
+%\usepackage{epic}
+
+\usepackage{setspace}
+\usepackage{ulem}
+\usepackage{cancel}
+\usepackage{todonotes}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{fit}
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows.meta}
+\usepackage{multicol}
+
+\pgfplotsset{compat = newest}
+
+
+\usepackage{etoolbox}
+\apptocmd{\thebibliography}{\setlength{\itemsep}{-0pt}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage[spanish]{babel}
+\usepackage{multicol}
+	\setlength{\columnsep}{30pt}
+	\setlength{\columnseprule}{0pt}
+\usepackage{enumitem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\textheight}{25cm}
+\setlength{\textwidth}{17cm}
+\setlength{\topmargin}{-3cm}
+\setlength{\oddsidemargin}{-5mm}
+\setlength{\evensidemargin}{0.2cm}
+%\addtolength{\topmargin}{-1cm} 
+%\addtolength{\leftmargin}{1cm}
+%recall \vec{} \overrightarrow{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\red}{\textcolor{red}}
+\newcommand{\blue}{\textcolor{blue}}
+\newcommand{\white}{\textcolor{white}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+\parindent=0mm %indentado de comienzo de p\'arrafo
+\parskip=0mm %separaci\'on entre p\'arrafos
+
+\thispagestyle{empty} %paginaci\'on
+\date{ }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcounter{ex}
+\newcommand{\ejer}{\stepcounter{ex}\textbf{\theex.-}\ }
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\hrule \vskip 1mm
+
+\begin{center}
+  \quad \noindent {\large \sc \bf PROYECTO DE PROGRAMACIÓN: Documentación para el Usuario}
+
+  \vskip 2mm
+  \hfill Grupo formado por: Alberto Tarrasa, Miguel Ángel Sacristán, Diego Fernández y \underline {Álvaro Grande}
+  \vskip 3mm \hrule
+\end{center}
+
+\begin{itemize}
+  \item  \textbf{Información necesaria para el juego} \vskip 2mm
+        Eres una hormiga perdida en el desierto y no sabes hacia dónde ir. De pronto, encuentras un ascensor, pero este no tiene energía. Al entrar a él, entrarás a un laboratorio abandonado en el que deberás encontrar una batería en cada piso para hacer que el ascensor vuelva a funcionar. Tendrás varios comandos que podrás utilizar:
+
+        \begin{itemize}
+          \item \textbf{move (m):} te permite moverte por los diferentes espacios del mapa. Deberás poner la dirección en la que desees moverte.
+
+                \begin{center}
+                  move(m) north(n) / south(s) / east(e) / west(w) / up(u) / down(d)
+                \end{center}
+
+          \item \textbf{take (t) / drop (d):} te permite coger/dejar objectos. Para recogerlos deberás estar en la misma ubicación que el objeto en cuestión. Deberás escribir el nombre del objeto para recogerlo:
+
+                \begin{center}
+                  take(t) / drop(d) <nombre del objeto>
+                \end{center}
+
+          \item \textbf{attack (a):} puedes atacar a los enemigos que encuentres. Si dispones que objetos que aumenten tus estadísticas de ataque, harás más daño a los enemigos. Si dispones de objetos que aumenten tus estadísticas de defensa, serás capaz de soportar golpes más fuertes. El daño ejercido al atacar es aleatorio con cada vez que se usa el comando. Solo puedes atacar a los enemigos que se encuentren en tu misma habitación.
+
+          \item \textbf{inspect (i):} puedes inspeccionar espacios para obtener información extra. Solo podrás inspeccionar aquellos espacios que estén iluminados. También podrás inspeccionar los objetos que se encuentren en tu misma habitación o en tu inventario.
+
+                \begin{center}
+                  inspect(i) space(s) / <nombre del objeto>
+                \end{center}
+
+          \item \textbf{open (o):} te permite abrir aquellos enlaces entre habitaciones con el objeto adecuado. El objeto utilizado se gasta al utilizarlo.
+
+                \begin{center}
+                  open(o) <nombre del enlace>~with <nombre del objeto>
+                \end{center}
+          \item \textbf{switch (s):} puedes cambiar entre los estados de encendido y apagado para aquellos objetos que permitan esta interacción. Por ejemplo, encender la linterna te permitirá iluminar habitaciones oscuras para inspeccionarlas y ver qué objetos tienen dentro.
+
+                \begin{center}
+                  switch (s) <nombre del objeto>
+                \end{center}
+
+          \item \textbf{save / load:} permite guardar o cargar una partida desde un archivo de guardado de formato .sav
+
+                \begin{center}
+                  save / load <nombre del archivo>
+                \end{center}
+
+        \end{itemize}
+
+        \pagebreak
+
+  \item \textbf{Mapa del juego}
+        \vskip 3mm
+        \begin{center}
+          {Primera planta}
+          \vskip 4mm
+
+          \begin{tikzpicture} [square/.style={regular polygon,regular polygon sides=4}]
+            \node at (0,0) [blue, square, draw] (112) {$...............$};
+            \node [align=flush center, xshift=-12px, yshift=-9px] at (112.north east) {$112$};
+            \node [align=flush center, yshift=10px] at (112.north) {$Elevator$};
+            \node [align=flush center, yshift=10px] at (112.south) {$Lantern$};
+
+            \node at (4,0) [square, draw] (113) {$...............$};
+            \node [align=flush center, xshift=-12px, yshift=-9px] at (113.north east) {$113$};
+            \node [align=flush center, yshift=-10px] at (113.south) {$Outside~World$};
+
+            \node at (8,0) [square, draw] (114) {$...............$};
+            \node [align=flush center, xshift=-12px, yshift=-9px] at (114.north east) {$114$};
+            \node [align=flush center, yshift=-10px] at (114.south) {$Outside~World$};
+            \node [green, align=flush center, yshift=10px] at (114.south) {$Battery1$};
+
+            \node at (0,-4) [square, draw] (121) {$...............$};
+            \node [align=flush center, xshift=-12px, yshift=-9px] at (121.north east) {$121$};
+            \node [align=flush center, yshift=-10px] at (121.south) {$Outside~World$};
+            \node [align=flush center, yshift=10px] at (121.south) {$Rock$};
+
+            \draw [-{Stealth[length=3mm, width=2mm]}] (112) -- (113);
+            \draw [{Stealth[length=3mm, width=2mm]}-] (112) -- (113);
+
+            \draw [-{Stealth[length=3mm, width=2mm]}] (113) -- (114);
+            \draw [{Stealth[length=3mm, width=2mm]}-] (113) -- (114);
+
+            \draw [-{Stealth[length=3mm, width=2mm]}] (112) -- (121);
+            \draw [{Stealth[length=3mm, width=2mm]}-] (112) -- (121);
+
+          \end{tikzpicture}
+          \vskip 3mm
+          Segunda planta
+          \vskip 4mm
+
+          \begin{tikzpicture} [square/.style={regular polygon,regular polygon sides=4}]
+            \node at (4,0) [blue, square, draw] (212) {$...............$};
+            \node [align=flush center, xshift=-12px, yshift=-9px] at (212.north east) {$212$};
+            \node [align=flush center, yshift=10px] at (212.north) {$Elevator$};
+
+            \node at (0,0) [square, draw] (211) {$...............$};
+            \node [align=flush center, xshift=-12px, yshift=-9px] at (211.north east) {$211$};
+            \node [align=flush center, yshift=-10px] at (211.south) {$X-Ray Room$};
+            \node [align=flush center, yshift=10px] at (211.south) {$LeadVest$};
+
+            \node at (8,0) [square, draw] (213) {$...............$};
+            \node [align=flush center, xshift=-12px, yshift=-9px] at (213.north east) {$213$};
+            \node [align=flush center, yshift=-10px] at (213.south) {$Reception$};
+            \node [align=flush center, yshift=23px] at (213.south) {$Computer$};
+            \node [align=flush center, yshift=10px] at (213.south) {$Papers$};
+
+            \node at (12,0) [square, draw] (214) {$...............$};
+            \node [align=flush center, xshift=-12px, yshift=-9px] at (214.north east) {$214$};
+            \node [align=flush center, yshift=10px] at (214.north) {$Corridor$};
+            \node [align=flush center, yshift=10px] at (214.south) {$LabGlasses$};
+
+
+            \node at (4,-4) [square, draw] (222) {$...............$};
+            \node [align=flush center, xshift=-12px, yshift=-9px] at (222.north east) {$222$};
+            \node [align=flush center, yshift=-10px] at (222.south) {$Bathroom$};
+            \node [align=flush center, yshift=23px] at (222.south) {\color{red}$Key1$};
+            \node [align=flush center, yshift=10px] at (222.south) {$Phone$};
+
+            \node at (12,-4) [square, draw] (224) {$...............$};
+            \node [align=flush center, xshift=-12px, yshift=-9px] at (224.north east) {$224$};
+            \node [align=flush center, yshift=-10px] at (224.south) {$Clonation~Lab$};
+            \node [green, align=flush center, yshift=10px] at (224.south) {$Battery2$};
+
+            \node at (13,-2) (key1) {};
+            \node [align=flush center, xshift=20px, red] at (key1) {$Key1$};
+
+
+            \draw [-{Stealth[length=3mm, width=2mm]}] (212) -- (211);
+            \draw [{Stealth[length=3mm, width=2mm]}-] (212) -- (211);
+
+            \draw [-{Stealth[length=3mm, width=2mm]}] (212) -- (222);
+            \draw [{Stealth[length=3mm, width=2mm]}-] (212) -- (222);
+
+            \draw [-{Stealth[length=3mm, width=2mm]}] (212) -- (213);
+            \draw [{Stealth[length=3mm, width=2mm]}-] (212) -- (213);
+
+            \draw [-{Stealth[length=3mm, width=2mm]}] (213) -- (214);
+            \draw [{Stealth[length=3mm, width=2mm]}-] (213) -- (214);
+
+            \draw [-{Stealth[length=3mm, width=2mm]}] (214) -- (224);
+            \draw [{Stealth[length=3mm, width=2mm]}-] (214) -- (224);
+
+            \draw [red, Circle-] (12,-2) -- (13,-2);
+
+          \end{tikzpicture}
+
+          \vskip 3mm
+          \pagebreak
+          Tercera planta
+          \vskip 4mm
+
+          \begin{tikzpicture} [square/.style={regular polygon,regular polygon sides=4}]
+            \node at (0,0) [square, draw] (311) {$...............$};
+            \node [align=flush center, xshift=-12px, yshift=-9px] at (311.north east) {$311$};
+            \node [align=flush center, yshift=10px] at (311.north) {$Pharmacy$};
+            \node [align=flush center, yshift=10px] at (311.south) {$Antibiotics$};
+
+            \node at (8,0) [square, draw] (313) {$...............$};
+            \node [align=flush center, xshift=-12px, yshift=-9px] at (313.north east) {$313$};
+            \node [align=flush center, yshift=10px] at (313.north) {$Genetics~Unit$};
+            \node [align=flush center, yshift=10px] at (313.south) {$Toxics$};
+            \node [align=flush center, yshift=23px] at (313.south) {$Charger$};
+
+            \node at (12,0) [square, draw] (314) {$...............$};
+            \node [align=flush center, xshift=-12px, yshift=-9px] at (314.north east) {$314$};
+            \node [align=flush center, yshift=10px] at (314.north) {$Sample~Area$};
+            \node [green, align=flush center, yshift=23px] at (314.south) {$Battery3$};
+            \node [align=flush center, yshift=10px] at (314.south) {$Wire$};
+
+            \node at (0,-4) [blue, square, draw] (321) {$...............$};
+            \node [align=flush center, xshift=-12px, yshift=-9px] at (321.north east) {$321$};
+            \node [align=flush center, yshift=-10px] at (321.south) {$Elevator$};
+
+            \node at (4,-4) [square, draw] (322) {$...............$};
+            \node [align=flush center, xshift=-12px, yshift=-9px] at (322.north east) {$322$};
+            \node [align=flush center, yshift=10px] at (322.north) {$Corridor$};
+            \node [align=flush center, yshift=10px] at (322.south) {$Pipeline$};
+
+            \node at (8,-4) [square, draw] (323) {$...............$};
+            \node [align=flush center, xshift=-12px, yshift=-9px] at (323.north east) {$323$};
+            \node [align=flush center, yshift=-9px, xshift=-11px] at (323.north) {$Corner~1$};
+
+            \node at (12,-4) [square, draw] (324) {$...............$};
+            \node [align=flush center, xshift=-12px, yshift=-9px] at (324.north east) {$324$};
+            \node [align=flush center, yshift=-9px, xshift=-11px] at (324.north) {$Corner~2$};
+            \node [align=flush center, yshift=10px] at (324.south) {$Syringe$};
+
+            \node at (8,-8) [square, draw] (333) {$...............$};
+            \node [align=flush center, xshift=-12px, yshift=-9px] at (333.north east) {$333$};
+            \node [align=flush center, yshift=-10px] at (333.south) {$Storage~Room$};
+            \node [align=flush center, yshift=10px] at (333.south) {$Refrigerator$};
+
+            \node at (12,-8) [square, draw] (334) {$...............$};
+            \node [align=flush center, xshift=-12px, yshift=-9px] at (334.north east) {$334$};
+            \node [align=flush center, yshift=-10px] at (334.south) {$Cooling~Room$};
+            \node [red, align=flush center, yshift=10px] at (334.south) {$Key2$};
+
+            \draw [-{Stealth[length=3mm, width=2mm]}] (311) -- (321);
+            \draw [{Stealth[length=3mm, width=2mm]}-] (311) -- (321);
+
+            \draw [-{Stealth[length=3mm, width=2mm]}] (321) -- (322);
+            \draw [{Stealth[length=3mm, width=2mm]}-] (321) -- (322);
+
+            \draw [-{Stealth[length=3mm, width=2mm]}] (322) -- (323);
+            \draw [{Stealth[length=3mm, width=2mm]}-] (322) -- (323);
+
+            \draw [-{Stealth[length=3mm, width=2mm]}] (323) -- (313);
+            \draw [{Stealth[length=3mm, width=2mm]}-] (323) -- (313);
+
+            \draw [-{Stealth[length=3mm, width=2mm]}] (323) -- (333);
+            \draw [{Stealth[length=3mm, width=2mm]}-] (323) -- (333);
+
+            \draw [-{Stealth[length=3mm, width=2mm]}] (323) -- (324);
+            \draw [{Stealth[length=3mm, width=2mm]}-] (323) -- (324);
+
+            \draw [-{Stealth[length=3mm, width=2mm]}] (324) -- (314);
+            \draw [{Stealth[length=3mm, width=2mm]}-] (324) -- (314);
+
+            \draw [-{Stealth[length=3mm, width=2mm]}] (324) -- (334);
+            \draw [{Stealth[length=3mm, width=2mm]}-] (324) -- (334);
+
+          \end{tikzpicture}
+
+          \vskip 3mm
+          Cuarta planta
+          \vskip 4mm
+
+          \begin{tikzpicture} [square/.style={regular polygon,regular polygon sides=4}]
+            \node at (0,0) [blue, square, draw] (411) {$...............$};
+            \node [align=flush center, xshift=-12px, yshift=-9px] at (411.north east) {$411$};
+            \node [align=flush center, yshift=10px] at (411.north) {$Elevator$};
+
+            \node at (4,0) [square, draw] (412) {$...............$};
+            \node [align=flush center, xshift=-12px, yshift=-9px] at (412.north east) {$412$};
+            \node [align=flush center, yshift=10px] at (412.north) {$Corridor$};
+
+            \node at (8,0) [square, draw] (413) {$...............$};
+            \node [align=flush center, xshift=-12px, yshift=-9px] at (413.north east) {$413$};
+            \node [align=flush center, yshift=10px] at (413.north) {$Office$};
+            \node [purple, align=flush center, yshift=10px] at (413.south) {$Enemy$};
+
+            \node at (6,0) (key2) {};
+            \node [align=flush center, yshift=-50px, red] at (key2) {$Key2$};
+
+            \draw [-{Stealth[length=3mm, width=2mm]}] (411) -- (412);
+            \draw [{Stealth[length=3mm, width=2mm]}-] (411) -- (412);
+
+            \draw [-{Stealth[length=3mm, width=2mm]}] (412) -- (413);
+            \draw [{Stealth[length=3mm, width=2mm]}-] (412) -- (413);
+
+            \draw[red, Circle-] (6,0) -- (6,-1.5);
+
+
+          \end{tikzpicture}
+
+
+        \end{center}
+
+        \pagebreak
+
+  \item \textbf{Indicaciones para terminar el juego} \\
+        Para terminar el juego, deberás derrotar al enemigo que se encuentra en lo más profundo del laboratorio. Comenzarás en la superficie y deberás coger una linterna y una batería para poner en marcha el ascensor. Una vez en la segunda planta, todas las habitaciones estarán oscuras, por lo que tendrás que encender tu linterna para inspeccionarlas y estudiar los objetos que te encuentres. Recogerás un traje que te protege de la radiación y una llave, con la que abrirás la puerta que lleva a la sala donde se encuentra la segunda batería, no sin antes recoger unas gafas que te dan protección. En el tercer piso, llegarás a una farmacia en la que encontrarás unos antibióticos que solo podrás tomar si dispones de una jeringa. Avanzando por el piso te quedas encerrado, y tienes que coger unos cables para arreglar el sistema de puertas en el almacén. Tras ser liberado, encuentras la batería, una jeringa y otra llave. De pronto, tu linterna se rompe y debes ir a la sala de refrigeración para repararla. Vuelves a la farmacia para curarte con los antibióticos y antes de bajar al cuerto piso recoges una tubería con la que harás más daño. En el último piso, abres la puerta de la oficina con la llave y te encuentras con el enemigo. Como vas bien equipado, lo derrotas fácilmente, pero este escapa hacia la superficie. Una sala se abre y al entrar se mejoran tus estadísticas de ataque. Subes hasta el segundo piso en busca del enemigo, pero el ascensor se rompe. Tendrás que usar unos papeles para arreglarlo. Por fin, sales a la superficie y derrotas al enemigo. Enhorabuena!
+
+        \small
+  \item \textbf{Lista de comandos para terminar el juego}
+        \begin{multicols}{3}
+          Drop (d) Penny
+          \\ Take (t) Lantern
+          \\ Move (m) e
+          \\Move (m) e
+          \\Take (t) Battery1
+          \\Move (m) w
+          \\Move (m) w
+          \\Open (o) Elevator with Battery1
+          \\Move (m) d
+          \\Switch (s) Lantern
+          \\Move (m) w
+          \\Inspect (i) s
+          \\Take (t) LeadVest
+          \\Move (m) e
+          \\Move (m) s
+          \\Inspect (i) s
+          \\Take (t) Key1
+          \\Move (m) n
+          \\Move (m) e
+          \\Move (m) e
+          \\Open (o) Door with Key1
+          \\Move (m) s
+          \\Inspect (i) s
+          \\Take (t) Battery2
+          \\Move (m) n
+          \\Inspect (i) s
+          \\Take (t) LabGlasses
+          \\Move (m) w
+          \\Move (m) w
+          \\Open (o) Elevator with Battery2
+          \\Move (m) d
+          \\Move (m) n
+          \\Inspect (i) s
+          \\Take (t) Antibiotics
+          \\Move (m) s
+          \\Move (m) e
+          \\Move (m) e
+          \\Move (m) e
+          \\Move (m) n
+          \\Inspect (i) s
+          \\Take (t) Wire
+          \\Move (m) s
+          \\Move (m) w
+          \\Move (m) s
+          \\Drop (d) Wire
+          \\Move (m) n
+          \\Move (m) e
+          \\Move (m) n
+          \\Take (t) Battery3
+          \\Move (m) s
+          \\Move (m) w
+          \\Move (m) w
+          \\Move (m) e
+          \\Move (m) e
+          \\Move (m) s
+          \\Switch (s) Lantern
+          \\Inspect (i) s
+          \\Take (t) Key2
+          \\Move (m) n
+          \\Move (m) w
+          \\Move (m) w
+          \\Move (m) w
+          \\Open (o) Elevator with Battery3
+          \\Move (m) e
+          \\Move (m) e
+          \\Move (m) e
+          \\Inspect (i) s
+          \\Take (t) Syringe
+          \\Move (m) w
+          \\Move (m) w
+          \\Move (m) w
+          \\Drop (d) LeadVest
+          \\Move (m) n
+          \\Take (t) Antibiotics
+          \\Drop (d) Syringe
+          \\Move (m) s
+          \\Take (t) LeadVest
+          \\Move (m) e
+          \\Move (m) e
+          \\Inspect (i) s
+          \\Move (m) w
+          \\Inspect (i) s
+          \\Take (t) Pipeline
+          \\Move (m) w
+          \\Move (m) d
+          \\Move (m) e
+          \\Inspect (i) s
+          \\Open (o) Door with Key2
+          \\Move (m) e
+          \\Attack (a)
+          \\Attack (a)
+          \\Attack (a)
+          \\Move (m) e
+          \\Move (m) w
+          \\Move (m) w
+          \\Move (m) w
+          \\Move (m) u
+          \\Move (m) u
+          \\Move (m) e
+          \\Inspect (i) s
+          \\Take (t) Papers
+          \\Move (m) w
+          \\Drop (d) Papers
+          \\Move (m) u
+          \\Move (m) s
+          \\Attack (a)
+          \\Attack (a)
+          \\Attack (a)
+          \\Attack (a)
+          \\Attack (a)
+        \end{multicols}
+
+
+
+
+
+\end{itemize}
+\begin{tikzpicture}
+
+\end{tikzpicture}
+
+
+\vskip 3mm
+
+\end{document}

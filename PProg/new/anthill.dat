@@ -1,0 +1,91 @@
+#s:112;Outside World; |_EXIT_|; |  ||  |; |  || o|; |  ||  |; |._._._|;Elevator;1;You can use the elevator to move up and down. You see a Lantern on the ground.
+#s:113;Outside World;^^ .. vvh;^. . hv v;. h .^^^ ;vv h .. ^;, vhh ^^.;Desert;1;There is nothing here. You see something bright in the distance.
+#s:114;Outside World;vv h .. ^;^. . hv v;. h . *h ;vv h * *.;, vhh *^.;Desert;1;There is something here.
+#s:122;Outside World;^^ ^^ vvh;^ XXX v v;. XXX ^^ ;vv XX . ^;, ..  ^^.;Desert;1;There is a big rock.
+#s:211;X-ray Room; X     X ;     |    ; X---|--X;     |   ;  XXXXXX ;X-ray Room;0;There's nobody here, but the protective material is still there.
+#s:212;Underground; |_EXIT_|; |  ||  |; |  || o|; |  ||  |; |._._._|;Elevator;1;You can use the elevator to move up and down.
+#s:213;Reception; *   --  ;    ____ ; __ |  | ; ||   __ ;      || ;Reception;0;The receptionist has disappeared. There is a computer on the table.
+#s:214;Corridor;   ____  ;  | @  | ; *| @@ | ;  |____| ; _______ ;Corridor;0;You see a failed experiments through the window.  You need a key to open the Clonation Lab door.
+#s:222;Bathroom;  _      ; | |     ; |_|_  _ ; . |.**.|; .  ?__? ;Bathroom;0;Scietists also need to go to the toilet.
+#s:224;Clonation Lab;  ___    ; |mo^| " ;  |.|___ ; "@ |mo^|;     |.| ;Clonation Lab;0;There are dead ant bodies inside weird tubes.
+#s:321;Underground; |_EXIT_|; |  ||  |; |  || o|; |  ||  |; |._._._|;Elevator;1;You can use the elevator to move up and down.
+#s:311;Pharmacy;   ----  ;  |    | ;  | RX | ; _|   _|_;   | |   ;Pharmacy;0;There are some experimental medicines.
+#s:322;Corridor;   ____  ;  | @  | ; *| @@ | ;  |____| ; _______ ;Corridor;0;You see a failed experiments through the window.
+#s:323;Corner 1;   | |   ;---* *---;         ;---* *---;   | |   ;Corner 1;0;There are the paths you can go through.
+#s:313;Genetics Unit;  .-^-.  ; /_/_\_\ ;   |   | ;   \___/ ; || --. ^;Genetics Unit;0;Scientists study DNA samples here.
+#s:314;Sample Area; ------- ;| SM    |;| _   - |;|    M  |; ------- ;Sample Area;0;this room is so untidy.
+#s:324;Corner 2;   |   | ;---*   * ;       | ;---*   * ;   |   | ;Corner 2;0;The end of the corridor.
+#s:334;Cooling Room;   _     ;  |X|  T ;   _  XX ; T  ___  ;  ..:.T  ;Cooling Room;0;There are just some refrigeration systems.
+#s:333;Storage Room; QQQQ    ;  _  * F); | |   F); |_| __  ;     MM  ;Storage Room;0;There are so many things here.
+#s:411;Underground; |_EXIT_|; |  ||  |; |  || o|; |  ||  |; |._._._|;Elevator;1;You can use the elevator to move up and down.
+#s:412;Corridor;  ___    ; /  P\   ; | L |   ; \___/   ;    |__  ;Corridor;1;There is nothing here. You need a key to open the leaders office room.
+#s:413;Office;    O    ;   ---   ;  | C |  ; O|C C|O ;  |___|  ;The Lab leaders office;1;There is an enemy here!
+#s:414;Upgrading Room;   ____  ; /_____\ ;   | |   ;   | |   ;   \./    ;Upgrade your arms;1;Your attack will be more efective thanks to this space
+#o:10;Battery1;114;You can use it to charge the elevator.;0;1;-1;50;0;0;0
+#o:11;Lantern;112;It can illuminate spaces. Use it to inspect dark places.;0;1;-1;-1;1;0;0
+#o:12;Rock;122;A rock. It is too heavy for you to lift.;0;0;-1;-1;0;0;0
+#o:20;Battery2;224;You can use it to charge the elevator.;1;1;-1;52;0;0;0
+#o:21;LeadVest;211;Ray technicians use it to protect themselves from radiation (+7 DEF).;1;1;-1;-1;0;0;-7
+#o:22;Key1;222;It opens the Clonation Lab.;1;1;-1;70;0;0;0
+#o:23;Computer;213;The receptionist logged out.;1;0;-1;-1;0;0;0
+#o:24;LabGlasses;214;Scientists may have used them to keep their eyes safe (+2 DEF).;1;1;-1;-1;0;0;-2
+#o:25;Phone;222;It is constantly ringing.;1;1;-1;-1;0;0;0
+#o:26;Papers;213;Highly important data.;1;1;-1;-1;0;0;0
+#o:30;Battery3;314;You can use it to charge the elevator,;1;1;-1;54;0;0;0
+#o:31;Antibiotics;311;They can give you extra health points. You need a Syringe to take them.;1;1;36;-1;0;0;0
+#o:32;Pipeline;322;It can be a powerfult weapon (+7 ATT).;1;1;-1;-1;0;0;7
+#o:33;Wire;314;They are useful when dealing with electrical issues.;1;1;-1;-1;0;0;0
+#o:34;Toxics;313;Dangerous substances, you may not touch them.;1;1;-1;-1;0;0;0
+#o:35;Charger;313;Small measures of liquid can be taken with it.;0;1;-1;-1;0;0;0
+#o:36;Syringe;324;It may have toxic substances in (+1 ATT).;1;1;-1;-1;0;0;1
+#o:37;Key2;334;It opens de lab leaders office.;1;1;-1;90;0;0;0
+#o:38;Refrigerator;333;It keeps samples cold.;1;0;-1;-1;0;0;0
+#p:1;Ant;112;5;5
+#e:2;Spider;413;5;9
+#l:50;Elevator;112;212;5;0
+#l:51;Elevator;212;112;4;1
+#l:52;Elevator;212;321;5;0
+#l:53;Elevator_32;321;212;4;1
+#l:54;Elevator;321;411;5;0
+#l:55;Elevator_43;411;321;4;1
+#l:56;112_112;112;113;2;1
+#l:57;112_112;113;112;3;1
+#l:58;112_114;113;114;2;1
+#l:59;114_112;114;113;3;1
+#l:60;112_122;112;122;1;1
+#l:61;122_112;122;112;0;1
+#l:62;211_212;211;212;2;1
+#l:63;212_211;212;211;3;1
+#l:64;212_213;212;213;2;1
+#l:65;213_212;213;212;3;1
+#l:66;213_214;213;214;2;1
+#l:67;214_213;214;213;3;1
+#l:68;212_222;212;222;1;1
+#l:69;222_212;222;212;0;1
+#l:70;Door;214;224;1;0
+#l:71;224_214;224;214;0;1
+#l:72;311_321;311;321;1;1
+#l:73;321_311;321;311;0;1
+#l:74;321_322;321;322;2;1
+#l:75;322_321;322;321;3;1
+#l:76;322_323;322;323;2;1
+#l:77;323_322;323;322;3;1
+#l:78;323_313;323;313;0;1
+#l:79;313_323;313;323;1;1
+#l:80;323_333;323;333;1;1
+#l:81;333_323;333;323;0;1
+#l:82;323_324;323;324;2;1
+#l:83;324_323;324;323;3;1
+#l:84;324_314;324;314;0;1
+#l:85;314_324;314;324;1;1
+#l:86;324_334;324;334;1;1
+#l:87;334_324;334;324;0;1
+#l:88;411_412;411;412;2;1
+#l:89;412_411;412;411;3;1
+#l:90;Door;412;413;2;0
+#l:91;413_412;413;412;3;0
+#l:92;413_414;413;414;2;0
+#l:93;414_413;414;413;3;1
+#rT:2;21;3;211;224;313
+#rL:2;34;-1;31;1
+#rA:4;33;0;77;333;11;334;322;0;414;2;0;2;5;91;92;122;0;51;26;1

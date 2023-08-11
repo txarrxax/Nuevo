@@ -1,0 +1,32 @@
+move south
+take Grano
+move south
+take Hoja
+move south
+take Palo
+move north
+take Biblia
+move south
+take Bibliaaaa
+take Grano
+take Biblia
+drop Grano
+drop
+drop Hoja
+drop Palo
+move north
+move east
+move north
+move west
+move west
+take Palo
+take Grano
+move south
+drop Hoja
+drop Biblia
+move north
+move east
+move east
+drop Grano
+drop Palo
+exit

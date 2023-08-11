@@ -1,0 +1,35 @@
+#s:11|Entry|  ___   _|_/   \_/ |     o O |mo'_ Oo8o|__/ \   /|Entrada
+#s:121|Corridor_1|    _    |\  \___  |\   mo'\_|\ @  _   | \__/ \__|pasillo
+#s:122|Corridor_2|  ___   _|_/   \_/ |     o O |mo'_ Oo8o|__/ \   /|pasillo
+#s:123|Corridor_3|  ___    |_/   \__ |    o o )|mo^ _ Oo |__/ \___ |pasillo
+#s:124|Corridor_4|    V    |  \ " /  |  - _ -  |o/ _-_ \o|o o\_/o o|pasillo_oscuro
+#s:125|Corridor_5|  /  /   | /   \__ |     mo'\| _ @  _ \|  \__// /|corredor_de_la_muerte
+#s:126|Corridor_6|    V    |  \ " /  |  - _ -  |o/ _-_ \o|o o\_/o o|pasillo_de_la_salvacion
+#s:127|Corridor_7|  ___   _|_/   \_/ |     o O |mo'_ Oo8o|__/ \   /|salida_del_pasillo
+#s:13|Pantry|  ___    |_/   \__ |    o o  |mo  _ Oo |__/ \___ |despensa
+#s:14|Hole|    _    |\  \___  |\   mo'\_|\ @  _   | \__/ \__|casa
+#o:21|Grano|11|Comida
+#o:22|Hoja|121|Hoja desprendida del techo
+#o:23|Palo|122|Arma
+#o:24|Biblia|123|Para hacer exorcismos
+#l:31|Entry|11|121|1|1
+#l:32|Corridor_1N|121|11|0|1
+#l:33|Corridor_1S|121|122|1|1
+#l:34|Corridor_2N|122|121|0|1
+#l:35|Corridor_2S|122|123|1|1
+#l:36|Corridor_2E|122|125|2|1
+#l:37|Corridor_3N|123|122|0|1
+#l:38|Corridor_3S|123|124|1|0
+#l:39|Corridor_4N|124|123|0|1
+#l:40|Corridor_4S|124|13|1|1
+#l:41|Pantry|13|124|0|1
+#l:42|Corridor_5W|125|122|3|1
+#l:43|Corridor_5E|125|126|2|1
+#l:44|Corridor_6W|126|125|3|1
+#l:45|Corridor_6E|126|127|2|1
+#l:46|Corridor_7W|127|126|3|1
+#l:47|Corridor_7E|127|14|2|1
+#l:48|Hole_W|14|127|3|1
+#l:49|Hole_S|14|13|1|1
+#p:1|ant|11|5|3
+#e:2|spider|123|5

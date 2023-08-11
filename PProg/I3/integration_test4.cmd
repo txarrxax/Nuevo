@@ -1,0 +1,36 @@
+inspect space
+move south
+inspect Grano
+move north
+take Grano
+move south
+inspect space
+inspect Grano
+inspect Biblia
+inspect Hoja
+move south
+take Palo
+inspect space
+drop Grano
+move south
+inspect Grano
+inspect Biblia
+inspect Palo
+inspect Hoja
+inspect random
+inspect
+take Biblia
+move north
+take Grano
+move east
+inspect Hoja
+inspect Grano
+inspect Palo
+inspect Biblia
+inspect space
+move east
+drop Palo
+inspect Palo
+inspect Biblia
+inspect Grano
+exit
